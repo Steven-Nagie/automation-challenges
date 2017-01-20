@@ -1,0 +1,24 @@
+{
+  "name": "automation-challenges",
+  "version": "0.0.0",
+  "description": "Automation challenges",
+  "main": "go.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Steven-Nagie/automation-challenges.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Steven-Nagie/automation-challenges/issues"
+  },
+  "homepage": "https://github.com/Steven-Nagie/automation-challenges",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "request": "^2.79.0",
+    "url": "^0.11.0"
+  }
+}
