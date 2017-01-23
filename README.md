@@ -11,4 +11,6 @@ To use these automations:
 
 Go.js will go to the proper site and return the title. Uses request and cheerio node packages. Request to make the request, cheerio to parse what's returned.
 
-Navigate.js will navigate to whatever URL is provided on the command line prompt, return the title of that page, then navigate to the menu tab that is input in the cli prompt.
+Navigate.js will navigate to whatever URL is provided on the command line prompt, return the title of that page, then navigate to the menu tab that is input in the cli prompt. Again, uses request and cheerio, and uses node package prompt to receive/parse cli input.
+
+subNavigate.js will navigate to the subMenu link indicated by the user. It is nearly exactly the same as navigate.js.
