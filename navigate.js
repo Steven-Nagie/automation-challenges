@@ -23,10 +23,10 @@ public void automation 1(){
 
 const request = require('request'),
     cheerio = require('cheerio'),
-    URL = require;
+    prompt = require('prompt');
 
-
-// let site = "https://www.skiutah.com";
+var siteName,
+    navigateTo;
 
 start = (site) => {
   request(site, function(err, res, body) {
@@ -65,9 +65,27 @@ visitPage = (site) => {
 }
 
 getLink = ($) => {
-  var link = $(`a[title^="${process.env.navigateTo}"]`).attr('href');
+  var link = $(`a[title^="${navigateTo}"]`).attr('href');
   console.log(link);
   visitPage(link)
 }
 
-start(process.env.siteName);
+var properties = [
+  {
+    name: 'siteName'
+  },
+  {
+    name: 'navigateTo'
+  }
+]
+
+console.log(`Please enter the URL for the site you wish to visit under "siteName", and the menu tab you'd like to navigate to under "navigateTo".
+Assuming you'll be visiting https://www.skiutah.com, your menu options are Stories, Plan Your Trip, Resorts & Snow, Deals, Passes, and Explore`)
+prompt.start();
+
+prompt.get(properties, function (err, result) {
+  if (err) {console.log(err); return 1;}
+  siteName = result.siteName;
+  navigateTo = result.navigateTo;
+  start(siteName);
+})
