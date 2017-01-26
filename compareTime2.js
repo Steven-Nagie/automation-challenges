@@ -56,7 +56,10 @@ describe('Webdriver tutorial', function() {
   });
 
   it("Can click through to resort page", function() {
-    driver.findElement(By.tagName('Compare Resorts')).click();
+    driver.findElement(By.linkText('Resort Comparison')).click().then(
+      driver.findElements(By.tagName('option'))
+        .then()
+    );
     expect(driver.getCurrentUrl()).to.eventually.equal('https://www.skiutah.com/resorts/compare-resorts');
   })
 
